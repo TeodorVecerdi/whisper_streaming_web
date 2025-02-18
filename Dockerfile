@@ -20,7 +20,8 @@ RUN pip install -r requirements.txt
 RUN python -c "from faster_whisper.utils import download_model; download_model('large-v3-turbo')"
 
 # Copy application source
-COPY . .
+COPY whisper_fastapi_online_server.py .
+COPY src src
 
 # Command to run the server
 CMD ["python", "whisper_fastapi_online_server.py", "--host", "0.0.0.0", "--port", "8000", "--model", "large-v3-turbo", "--language", "auto"]
