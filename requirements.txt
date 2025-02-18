@@ -3,7 +3,6 @@ soundfile==0.13.1
 fastapi==0.115.8
 ffmpeg-python==0.2.0
 faster_whisper==1.1.1
-torch==2.5.1+cu124
 mosestokenizer==1.2.1
 wtpsplit==2.1.4
 numpy>=2.1.3
