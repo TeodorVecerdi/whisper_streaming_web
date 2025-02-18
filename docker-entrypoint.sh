@@ -6,7 +6,7 @@ set -e
 : "${HOST:=0.0.0.0}"
 : "${PORT:=8000}"
 : "${LANGUAGE:=en}"
-: "${MIN_CHUNK_SIZE:=0.5}"
+: "${MIN_CHUNK_SIZE:=1}"
 
 CMD="python3 whisper_fastapi_online_server.py \
     --host $HOST \

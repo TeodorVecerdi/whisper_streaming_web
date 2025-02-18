@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir torch \
 
 # Stage to download Whisper
 FROM base AS model_downloader
-ENV WHISPER_MODEL_NAME=distil-large-v3
+ENV WHISPER_MODEL_NAME=distil-large-v2
 RUN pip3 install faster-whisper
 RUN python3 -c "from faster_whisper.utils import download_model; download_model('$WHISPER_MODEL_NAME')"
 
