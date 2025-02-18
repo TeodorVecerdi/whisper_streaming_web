@@ -78,10 +78,8 @@ def add_shared_args(parser):
         "--model",
         type=str,
         default="large-v3-turbo",
-        choices="tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2,large-v3,large,large-v3-turbo".split(
-            ","
-        ),
-        help="Name size of the Whisper model to use (default: large-v2). The model is automatically downloaded from the model hub if not present in model cache dir.",
+        choices="tiny.en,tiny,base.en,base,small.en,small,medium.en,medium,large-v1,large-v2,large-v3,large,distil-large-v2,distil-medium.en,distil-small.en,distil-large-v3,large-v3-turbo,turbo".split(","),
+        help="Name size of the Whisper model to use (default: large-v3-turbo). The model is automatically downloaded from the model hub if not present in model cache dir.",
     )
     parser.add_argument(
         "--model_cache_dir",
