@@ -158,7 +158,7 @@ async def websocket_endpoint(websocket: WebSocket):
         beg = time()
         beg_loop = time()
         chunk_history = []  # Will store dicts: {beg, end, text, speaker}
-        
+
         while True:
             try:
                 elapsed_time = math.floor((time() - beg) * 10) / 10 # Round to 0.1 sec
@@ -253,7 +253,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
                     response = {"lines": lines, "buffer": buffer}
                     await websocket.send_json(response)
-                    
+
             except Exception as e:
                 logger.warning(f"Exception in ffmpeg_stdout_reader: {e}")
                 break
@@ -291,7 +291,4 @@ async def websocket_endpoint(websocket: WebSocket):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(
-        "whisper_fastapi_online_server:app", host=args.host, port=args.port, reload=True,
-        log_level="info"
-    )
+    uvicorn.run("whisper_fastapi_online_server:app", host=args.host, port=args.port, reload=False, log_level="info")
