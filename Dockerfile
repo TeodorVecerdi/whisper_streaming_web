@@ -17,6 +17,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+RUN python -c "from faster_whisper.utils import download_model; download_model('large-v3-turbo')"
+
 # Copy application source
 COPY . .
 
